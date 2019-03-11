@@ -1,17 +1,19 @@
 
 function dividers(n)
   
-  str={}
-  pom={}
+  local str={}
+  local pom={}
+  local w
   
-  for i=2, n do
+  local g=math.sqrt(n)
+  for i=2, g do
     pom[i]=true
   end
   
-  for i = 2, n do
+  for i = 2, g do
     if pom[i] then
      w=i*i
-      while (w<=n) do
+      while w<=n do
         pom[w] = false
         w=w+i;
       end
@@ -36,7 +38,7 @@ function fib(n)
 end
   
 function max(s)
-  maks=s[1]
+  local maks=s[1]
   for i=2, #s do
     if s[i]>maks then
       maks=s[i]
@@ -45,8 +47,8 @@ function max(s)
   return maks
 end
 
-x=dividers(30)
-
+x=dividers(210)
+y={}
 for i=1, #x do
   print(x[i])
 end
